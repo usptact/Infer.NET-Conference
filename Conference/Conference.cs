@@ -176,6 +176,11 @@ namespace Conference
         {
             Name = "Reviewer " + index;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " + Name;
+        }
     }
     /// <summary>
     /// This class stores all the information about a submission.
@@ -193,6 +198,11 @@ namespace Conference
         public Submission(int index)
         {
             Title = "Submission " + index;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " + Title;
         }
     }
     /// <summary>

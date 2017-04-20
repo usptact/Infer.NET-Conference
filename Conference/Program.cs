@@ -11,26 +11,43 @@ namespace Conference
     {
         static void Main(string[] args)
         {
-            Review[] reviewArray = new Review[18]
+            Reviewer r1 = new Reviewer(1);
+            Reviewer r2 = new Reviewer(2);
+            Reviewer r3 = new Reviewer(3);
+            Reviewer r4 = new Reviewer(4);
+            Reviewer r5 = new Reviewer(5);
+            Reviewer r6 = new Reviewer(6);
+
+            Submission s1 = new Submission(1);
+            Submission s2 = new Submission(2);
+            Submission s3 = new Submission(3);
+            Submission s4 = new Submission(4);
+            Submission s5 = new Submission(5);
+            Submission s6 = new Submission(6);
+
+            Review[] reviewArray = new Review[21]
             {
-                new Review( new Reviewer(1), new Submission(2), 3, 2),
-                new Review( new Reviewer(1), new Submission(4), 4, 1),
-                new Review( new Reviewer(1), new Submission(5), 2, 3),
-                new Review( new Reviewer(2), new Submission(1), 1, 2),
-                new Review( new Reviewer(2), new Submission(2), 3, 1),
-                new Review( new Reviewer(2), new Submission(4), 5, 3),
-                new Review( new Reviewer(3), new Submission(3), 2, 1),
-                new Review( new Reviewer(3), new Submission(4), 4, 2),
-                new Review( new Reviewer(3), new Submission(5), 3, 2),
-                new Review( new Reviewer(4), new Submission(1), 1, 3),
-                new Review( new Reviewer(4), new Submission(3), 5, 2),
-                new Review( new Reviewer(4), new Submission(6), 4, 2),
-                new Review( new Reviewer(5), new Submission(1), 1, 1),
-                new Review( new Reviewer(5), new Submission(2), 4, 1),
-                new Review( new Reviewer(5), new Submission(3), 3, 1),
-                new Review( new Reviewer(5), new Submission(4), 2, 1),
-                new Review( new Reviewer(5), new Submission(5), 4, 1),
-                new Review( new Reviewer(5), new Submission(6), 5, 1)
+                new Review( r1, s2, 3, 2),
+                new Review( r1, s4, 4, 1),
+                new Review( r1, s5, 2, 3),
+                new Review( r2, s1, 1, 2),
+                new Review( r2, s2, 3, 1),
+                new Review( r2, s4, 5, 3),
+                new Review( r3, s3, 2, 1),
+                new Review( r3, s4, 4, 2),
+                new Review( r3, s5, 3, 2),
+                new Review( r4, s1, 1, 3),
+                new Review( r4, s3, 5, 2),
+                new Review( r4, s6, 4, 2),
+                new Review( r5, s1, 1, 1),
+                new Review( r5, s2, 4, 1),
+                new Review( r5, s3, 3, 1),
+                new Review( r5, s4, 2, 1),
+                new Review( r5, s5, 4, 1),
+                new Review( r5, s6, 5, 1),
+                new Review( r6, s1, 2, 3),
+                new Review( r6, s3, 2, 1),
+                new Review( r6, s6, 5, 2)
             };
 
             ReviewerCalibration rc = new ReviewerCalibration();
