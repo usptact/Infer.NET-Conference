@@ -7,74 +7,6 @@ using System.Threading.Tasks;
 
 namespace Conference
 {
-    // Collection of Review objects. This class implements IEnumerable so that it can be used with ForEach syntax.
-    public class Reviews : IEnumerable
-    {
-        private Review[] _review;
-        public Reviews(Review[] rArray)
-        {
-            _review = new Review[rArray.Length];
-            for (int i = 0; i < rArray.Length; i++)
-                _review[i] = rArray[i];
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return (IEnumerator) GetEnumerator();
-        }
-
-        public ReviewEnum GetEnumerator()
-        {
-            return new ReviewEnum(_review);
-        }
-    }
-
-    public class ReviewEnum : IEnumerator
-    {
-        public Review[] _review;
-
-        int position = -1;
-
-        public ReviewEnum(Review[] list)
-        {
-            _review = list;
-        }
-
-        public bool MoveNext()
-        {
-            position++;
-            return (position < _review.Length);
-        }
-
-        public void Reset()
-        {
-            position = -1;
-        }
-
-        object IEnumerator.Current
-        {
-            get
-            {
-                return Current;
-            }
-        }
-
-        public Review Current
-        {
-            get
-            {
-                try
-                {
-                    return _review[position];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    throw new InvalidOperationException();
-                }
-            }
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -101,14 +33,12 @@ namespace Conference
                 new Review( new Reviewer(5), new Submission(6), 5, 1)
             };
 
-            Reviews reviews = new Reviews(reviewArray);
-
             ReviewerCalibration rc = new ReviewerCalibration();
 
-            foreach (Review r in reviews)
-                rc.Run(r);
+            //foreach (Review r in reviews)
+            //    rc.Run(r);
 
-            ReviewerCalibrationResults rcResults = rc.Run(reviews);
+            ReviewerCalibrationResults rcResults = rc.Run(reviewArray);
         }
     }
 }
