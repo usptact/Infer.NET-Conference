@@ -105,6 +105,9 @@ namespace Conference
 
             ReviewerCalibration rc = new ReviewerCalibration();
 
+            foreach (Review r in reviews)
+                rc.Run(r);
+
             ReviewerCalibrationResults rcResults = rc.Run(reviews);
         }
     }
