@@ -8,3 +8,5 @@ A data point should provide the following information:
 * submission ID
 * acceptance judgement
 * expertise ID
+
+Updated to use open source Infer.NET.
